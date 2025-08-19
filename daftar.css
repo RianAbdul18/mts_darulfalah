@@ -1,0 +1,123 @@
+/* daftar.css - CSS spesifik untuk daftar.html */
+.ppdb-isi {
+    width: 100%;
+    background: var(--background-content);
+    padding: 20px 0;
+    margin-top: 100px;
+}
+
+.ppdb-kolom {
+    width: 95%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #d8e8f8;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+}
+
+.ppdb-kolom h3 {
+    font-size: 24px;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ppdb-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.form-group input[type="file"] {
+    padding: 5px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.submit-button {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.submit-button:hover {
+    background: var(--hover-color);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.error-message {
+    font-size: 14px;
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .ppdb-kolom {
+        padding: 15px;
+    }
+
+    .ppdb-kolom h3 {
+        font-size: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        font-size: 12px;
+    }
+
+    .submit-button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .error-message {
+        font-size: 12px;
+    }
+}
