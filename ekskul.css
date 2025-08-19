@@ -1,0 +1,73 @@
+/* ekskul.css - CSS spesifik untuk ekskul.html */
+.ekskul-content {
+    width: 100%;
+    padding: 20px 0;
+    background: var(--background-content);
+    margin-top: 100px;
+}
+
+.ekskul-container {
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px 15px;
+}
+
+.ekskul-section {
+    display: none;
+    background: #d8e8f8;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.ekskul-section.active {
+    display: block;
+    opacity: 1;
+}
+
+.ekskul-section h3 {
+    margin: 10px 0;
+    color: var(--text-color);
+}
+
+.ekskul-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ekskul-image {
+    width: 100%;
+    height: 250px;
+}
+
+.ekskul-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.ekskul-text {
+    width: 100%;
+    padding: 15px;
+}
+
+.ekskul-text p {
+    font-size: 14px;
+    color: var(--text-color);
+    text-align: justify;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .ekskul-image {
+        height: 200px;
+    }
+
+    .ekskul-text {
+        padding: 15px 0;
+    }
+}
