@@ -1,0 +1,220 @@
+/* profil.css - CSS spesifik untuk profil.html */
+.profile-content {
+    width: 100%;
+    padding: 20px 0;
+    background: var(--background-content);
+    margin-top: 100px;
+}
+
+.profile-container {
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px 15px;
+}
+
+.profile-section-1,
+.profile-section-2,
+.profile-section-3,
+.profile-section-4,
+.profile-section-5,
+.profile-section-6 {
+    display: none;
+    background: #d8e8f8;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.profile-section-1.active,
+.profile-section-2.active,
+.profile-section-3.active,
+.profile-section-4.active,
+.profile-section-5.active,
+.profile-section-6.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Individual Section Styles */
+.profile-section-1 {
+    background: #e8f0fe;
+}
+
+.profile-section-2 {
+    background: #f0f4f8;
+}
+
+.profile-section-3 {
+    background: #e6f3fa;
+}
+
+.profile-section-4 {
+    background: #fff3e0;
+}
+
+.profile-section-5 {
+    background: #f5f5f5;
+}
+
+.profile-section-6 {
+    background: #e8f5e9;
+}
+
+.profile-section-1 h3,
+.profile-section-2 h3,
+.profile-section-3 h3,
+.profile-section-4 h3,
+.profile-section-5 h3,
+.profile-section-6 h3 {
+    margin: 10px 0;
+    color: var(--text-color);
+    font-size: 24px;
+}
+
+.profile-section-1 p,
+.profile-section-2 p,
+.profile-section-3 p,
+.profile-section-4 p,
+.profile-section-5 p,
+.profile-section-6 p {
+    text-indent: 2.5em;
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 16px;
+    color: var(--text-secondary);
+}
+
+.profile-section-1 ul,
+.profile-section-1 ol,
+.profile-section-2 ul,
+.profile-section-2 ol,
+.profile-section-3 ul,
+.profile-section-3 ol,
+.profile-section-4 ul,
+.profile-section-4 ol,
+.profile-section-5 ul,
+.profile-section-5 ol,
+.profile-section-6 ul,
+.profile-section-6 ol {
+    margin: 10px 0 10px 40px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.profile-section-1 li,
+.profile-section-2 li,
+.profile-section-3 li,
+.profile-section-4 li,
+.profile-section-5 li,
+.profile-section-6 li {
+    margin-bottom: 8px;
+}
+
+.profile-staff-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.profile-staff-item {
+    text-align: center;
+}
+
+.profile-staff-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+}
+
+.profile-staff-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin: 10px 0 5px;
+}
+
+.profile-staff-role {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.profile-facilities-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.profile-facility-item {
+    background: rgb(240, 240, 244);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-facility-image {
+    width: 100%;
+    height: 250px;
+}
+
+.profile-facility-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.profile-facility-text {
+    width: 100%;
+    padding: 15px;
+}
+
+.profile-facility-text h4 {
+    font-size: 18px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.profile-facility-text p {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .profile-staff-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .profile-staff-image {
+        height: 200px;
+    }
+
+    .profile-staff-name {
+        font-size: 12px;
+    }
+
+    .profile-staff-role {
+        font-size: 11px;
+    }
+
+    .profile-facilities-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-facility-image {
+        height: 200px;
+    }
+
+    .profile-facility-text {
+        padding: 10px 0;
+    }
+}
