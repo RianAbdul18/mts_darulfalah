@@ -1,0 +1,366 @@
+/* index.css - CSS spesifik untuk index.html */
+.hero-slider {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-container {
+    display: flex;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.slider-item {
+    width: 100%;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.slider-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.slider-text {
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    width: 98%;
+    height: 610px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.slider-text h2 {
+    margin-top: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 60px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.slider-text p {
+    font-family: 'Roboto', sans-serif;
+    width: 60%;
+    margin-top: 80px;
+    font-size: 30px;
+}
+
+.slider-item.active .slider-text {
+    opacity: 1;
+}
+
+.slider-prev, .slider-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    transition: background 0.3s ease-in-out;
+}
+
+.slider-prev:hover, .slider-next:hover {
+    background: var(--accent-color);
+}
+
+.slider-prev {
+    left: 20px;
+}
+
+.slider-next {
+    right: 20px;
+}
+
+/* Pidato Section */
+.pidato {
+    position: relative;
+    margin: 20px auto;
+    width: 95%;
+    max-width: 1200px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 998;
+    margin-top: -80px;
+}
+
+.sambutan {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.pidato img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.pidato h2 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.pidato p {
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+/* Content Styles */
+.content-container {
+    width: 100%;
+    padding: 20px 0;
+    background: var(--background-content);
+}
+
+.container {
+    width: 95%;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.inner-section {
+    background: #d8e8f8;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.inner-section h3 {
+    margin: 10px 0;
+    color: var(--text-color);
+}
+
+.agenda-sekolah {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.agenda-rincian {
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    flex: 1 1 300px;
+    box-shadow: var(--shadow);
+}
+
+.agenda-rincian h4 {
+    font-size: 18px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.agenda-rincian p {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.staff-gallery {
+    display: flex;
+    overflow-x: auto;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+.staff-item {
+    text-align: center;
+}
+
+.staff-image {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.staff-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin: 10px 0 5px;
+}
+
+.staff-role {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.berita-gallery, .facilities-gallery {
+    display: flex;
+    overflow-x: auto;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+.berita-item, .facility-item {
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.facility-item {
+    background: rgb(240, 240, 244);
+}
+
+.berita-image, .facility-image {
+    width: 400px;
+    height: 250px;
+} 
+
+.berita-img, .facility-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.berita-text, .facility-text {
+    width: 100%;
+    padding: 15px;
+}
+
+.berita-text h4, .facility-text h4 {
+    font-size: 18px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.facility-text p {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.selengkapnya-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+}
+
+.selengkapnya-button:hover {
+    background: var(--hover-color);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .slider-text h2 {
+        font-size: 50px;
+    }
+
+    .slider-text p {
+        width: 80%;
+        font-size: 20px;
+    }
+
+    .slider-prev, .slider-next {
+        font-size: 1rem;
+        padding: 8px;
+    }
+
+    .pidato {
+        margin-top: -40px;
+        padding: 15px;
+    }
+
+    .sambutan {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .pidato img {
+        width: 80px;
+    }
+
+    .pidato h2 {
+        font-size: 20px;
+    }
+
+    .pidato p {
+        font-size: 16px;
+    }
+
+    .staff-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .staff-image {
+        height: 200px;
+    }
+
+    .staff-name {
+        font-size: 12px;
+    }
+
+    .staff-role {
+        font-size: 11px;
+    }
+
+    .berita-gallery, .facilities-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .berita-image, .facility-image {
+        height: 200px;
+    }
+
+    .berita-text, .facility-text {
+        padding: 15px 0;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .selengkapnya-button {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .slider-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .slider-text p {
+        font-size: 1rem;
+        width: 90%;
+    }
+}
