@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Penerimaan Peserta Didik Baru (PPDB) MTs Darul Falah Cukangbungur, informasi pendaftaran dan dokumen yang diperlukan.">
+    <meta name="keywords" content="MTs Darul Falah, PPDB, pendaftaran, Cukangbungur">
+    <title>PPDB - MTs Darul Falah</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="daftar.css">
+</head>
+<body>
+    <nav role="navigation">
+        <div class="wrapper">
+            <div class="sekolah-header">
+                <img src="img/Logo-removebg-preview.png" alt="Logo MTs Darul Falah Cukangbungur" class="logo" loading="lazy" onerror="this.src='img/fallback.jpg'">
+                <div class="nama-sekolah">
+                    <h2>MTs Darul Falah</h2>
+                    <p>Cukangbungur</p>
+                </div>
+            </div>
+            <button class="hamburger" aria-label="Buka menu navigasi">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li class="dropdown1">
+                        <a href="#" class="profile-link" aria-expanded="false">Profil</a>
+                        <ul class="submenu1">
+                            <li><a href="profil.html#profil-sekolah">Profil Sekolah</a></li>
+                            <li><a href="profil.html#sejarah-singkat">Sejarah Singkat</a></li>
+                            <li><a href="profil.html#visi-misi">Visi, Misi & Tujuan</a></li>
+                            <li><a href="profil.html#staf-pengajar">Staf Pengajar</a></li>
+                            <li><a href="profil.html#staf-kependidikan">Staf Tenaga Kependidikan</a></li>
+                            <li><a href="profil.html#fasilitas">Fasilitas</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown2">
+                        <a href="#" aria-expanded="false">Ekstrakurikuler</a>
+                        <ul class="submenu2">
+                            <li><a href="ekskul.html#pramuka">Pramuka</a></li>
+                            <li><a href="ekskul.html#perisaidiri">Perisai Diri</a></li>
+                            <li><a href="ekskul.html#voli">Voli</a></li>
+                            <li><a href="ekskul.html#marchingband">Marching Band</a></li>
+                            <li><a href="ekskul.html#marawis">Marawis</a></li>
+                            <li><a href="ekskul.html#rebana">Rebana</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                    <li><a href="daftar.html" class="tombol1" aria-current="page">PPDB</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="ppdb-isi">
+        <div class="ppdb-kolom">
+            <h3>Silahkan Isi Formulir Pendaftaran</h3>
+            <form id="ppdb-form" class="ppdb-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="full-name">Nama Lengkap</label>
+                    <input type="text" id="full-name" name="full-name" placeholder="Masukkan nama lengkap" required aria-describedby="full-name-help">
+                    <p id="full-name-help" class="sr-only">Masukkan nama lengkap Anda</p>
+                </div>
+                <div class="form-group">
+                    <label for="birth-date">Tanggal Lahir</label>
+                    <input type="date" id="birth-date" name="birth-date" required aria-describedby="birth-date-help">
+                    <p id="birth-date-help" class="sr-only">Pilih tanggal lahir Anda</p>
+                </div>
+                <div class="form-group">
+                    <label for="address">Alamat</label>
+                    <textarea id="address" name="address" rows="3" placeholder="Masukkan alamat lengkap" required aria-describedby="address-help"></textarea>
+                    <p id="address-help" class="sr-only">Masukkan alamat lengkap tempat tinggal</p>
+                </div>
+                <div class="form-group">
+                    <label for="parent-name">Nama Orang Tua</label>
+                    <input type="text" id="parent-name" name="parent-name" placeholder="Masukkan nama orang tua" required aria-describedby="parent-name-help">
+                    <p id="parent-name-help" class="sr-only">Masukkan nama lengkap orang tua/wali</p>
+                </div>
+                <div class="form-group">
+                    <label for="parent-phone">Nomor Telepon Orang Tua</label>
+                    <input type="tel" id="parent-phone" name="parent-phone" placeholder="Masukkan nomor telepon" required aria-describedby="parent-phone-help">
+                    <p id="parent-phone-help" class="sr-only">Masukkan nomor telepon orang tua yang aktif</p>
+                </div>
+                <div class="form-group">
+                    <label for="documents">Unggah Dokumen (Akta Kelahiran, Ijazah, dll.)</label>
+                    <input type="file" id="documents" name="documents" accept=".pdf,.jpg,.png" multiple required aria-describedby="documents-help">
+                    <p id="documents-help" class="sr-only">Unggah dokumen seperti akta kelahiran dan ijazah dalam format PDF, JPG, atau PNG</p>
+                </div>
+                <button type="submit" class="submit-button" aria-label="Kirim formulir pendaftaran">Kirim Pendaftaran</button>
+            </form>
+            <p id="form-feedback" style="display: none; margin-top: 10px;" aria-live="polite"></p>
+        </div>
+    </section>
+    
+    <footer class="footer" aria-label="Footer MTs Darul Falah">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h4>MTs Darul Falah Cukangbungur</h4>
+                <p>Kp. Cukang Bungur, Kecamatan Parungponteng, Kabupaten Tasikmalaya, Jawa Barat</p>
+                <p>Email: info@mtsdarulfalah.sch.id | Telepon: (0265) 123456</p>
+            </div>
+            <div class="footer-links">
+                <h4>Tautan Cepat</h4>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="ekskul.html">Ekstrakurikuler</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                    <li><a href="daftar.html">PPDB</a></li>
+                </ul>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 MTs Darul Falah Cukangbungur. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="Kembali ke atas">Kembali ke Atas</button>
+
+    <script src="main.js"></script>
+</body>
+</html>
