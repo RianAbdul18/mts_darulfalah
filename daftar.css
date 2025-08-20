@@ -1,123 +1,90 @@
-/* daftar.css - CSS spesifik untuk daftar.html */
-.ppdb-isi {
-    width: 100%;
-    background: var(--background-content);
-    padding: 20px 0;
-    margin-top: 100px;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
 }
 
-.ppdb-kolom {
-    width: 95%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #d8e8f8;
-    border-radius: 5px;
-    box-shadow: var(--shadow);
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
 }
 
-.ppdb-kolom h3 {
-    font-size: 24px;
-    color: var(--text-color);
-    margin-bottom: 20px;
-    text-align: center;
+h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
-.ppdb-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+h2 {
+  font-size: 20px;
+  margin: 25px 0 15px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.form-box {
+  background: #e9f5ff;
+  padding: 20px;
+  border-radius: 6px;
 }
 
 .form-group {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 .form-group label {
-    font-size: 14px;
-    color: var(--text-color);
-    margin-bottom: 5px;
+  flex: 0 0 220px;
+  font-size: 14px;
 }
 
 .form-group input,
-.form-group textarea,
-.form-group select {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 14px;
-    color: var(--text-color);
+.form-group select,
+.form-group textarea {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
 }
 
-.form-group input[type="file"] {
-    padding: 5px;
+.form-group textarea {
+  resize: vertical;
 }
 
 .form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
-.submit-button {
-    background: var(--primary-color);
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
+.form-group span {
+  color: red;
 }
 
-.submit-button:hover {
-    background: var(--hover-color);
+.btn-submit {
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
 }
 
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+.btn-submit:hover {
+  background: #0056b3;
 }
 
-.error-message {
-    font-size: 14px;
-    color: red;
-    margin-top: 10px;
-    text-align: center;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    .ppdb-kolom {
-        padding: 15px;
-    }
-
-    .ppdb-kolom h3 {
-        font-size: 20px;
-    }
-
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-        font-size: 12px;
-    }
-
-    .submit-button {
-        font-size: 14px;
-        padding: 8px 15px;
-    }
-
-    .error-message {
-        font-size: 12px;
-    }
-}

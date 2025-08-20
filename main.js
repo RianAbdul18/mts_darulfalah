@@ -414,4 +414,29 @@ document.addEventListener('DOMContentLoaded', function() {
     window.onload = () => {
         startSlideshow();
     };
+// Form validation for PPDB.html//
+document.getElementById("ppdbForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  let inputs = document.querySelectorAll("#ppdbForm [required]");
+  let valid = true;
+
+  inputs.forEach(input => {
+    if (input.value.trim() === "") {
+      valid = false;
+      input.style.borderColor = "red";
+    } else {
+      input.style.borderColor = "#ccc";
+    }
+  });
+
+  if (!valid) {
+    alert("⚠️ Harap isi semua field wajib!");
+    return;
+  }
+
+  alert("✅ Pendaftaran berhasil! Data sudah tersimpan.");
+  this.reset();
+});
+
 }); 

@@ -1,127 +1,217 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Penerimaan Peserta Didik Baru (PPDB) MTs Darul Falah Cukangbungur, informasi pendaftaran dan dokumen yang diperlukan.">
-    <meta name="keywords" content="MTs Darul Falah, PPDB, pendaftaran, Cukangbungur">
-    <title>PPDB - MTs Darul Falah</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="daftar.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PPDB 2025/2026</title>
+  <link rel="stylesheet" href="daftar.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav role="navigation">
-        <div class="wrapper">
-            <div class="sekolah-header">
-                <img src="img/Logo-removebg-preview.png" alt="Logo MTs Darul Falah Cukangbungur" class="logo" loading="lazy" onerror="this.src='img/fallback.jpg'">
-                <div class="nama-sekolah">
-                    <h2>MTs Darul Falah</h2>
-                    <p>Cukangbungur</p>
-                </div>
-            </div>
-            <button class="hamburger" aria-label="Buka menu navigasi">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="menu">
-                <ul>
-                    <li><a href="index.html">Beranda</a></li>
-                    <li class="dropdown1">
-                        <a href="#" class="profile-link" aria-expanded="false">Profil</a>
-                        <ul class="submenu1">
-                            <li><a href="profil.html#profil-sekolah">Profil Sekolah</a></li>
-                            <li><a href="profil.html#sejarah-singkat">Sejarah Singkat</a></li>
-                            <li><a href="profil.html#visi-misi">Visi, Misi & Tujuan</a></li>
-                            <li><a href="profil.html#staf-pengajar">Staf Pengajar</a></li>
-                            <li><a href="profil.html#staf-kependidikan">Staf Tenaga Kependidikan</a></li>
-                            <li><a href="profil.html#fasilitas">Fasilitas</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown2">
-                        <a href="#" aria-expanded="false">Ekstrakurikuler</a>
-                        <ul class="submenu2">
-                            <li><a href="ekskul.html#pramuka">Pramuka</a></li>
-                            <li><a href="ekskul.html#perisaidiri">Perisai Diri</a></li>
-                            <li><a href="ekskul.html#voli">Voli</a></li>
-                            <li><a href="ekskul.html#marchingband">Marching Band</a></li>
-                            <li><a href="ekskul.html#marawis">Marawis</a></li>
-                            <li><a href="ekskul.html#rebana">Rebana</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="galeri.html">Galeri</a></li>
-                    <li><a href="kontak.html">Kontak</a></li>
-                    <li><a href="daftar.html" class="tombol1" aria-current="page">PPDB</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <section class="ppdb-isi">
-        <div class="ppdb-kolom">
-            <h3>Silahkan Isi Formulir Pendaftaran</h3>
-            <form id="ppdb-form" class="ppdb-form" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="full-name">Nama Lengkap</label>
-                    <input type="text" id="full-name" name="full-name" placeholder="Masukkan nama lengkap" required aria-describedby="full-name-help">
-                    <p id="full-name-help" class="sr-only">Masukkan nama lengkap Anda</p>
-                </div>
-                <div class="form-group">
-                    <label for="birth-date">Tanggal Lahir</label>
-                    <input type="date" id="birth-date" name="birth-date" required aria-describedby="birth-date-help">
-                    <p id="birth-date-help" class="sr-only">Pilih tanggal lahir Anda</p>
-                </div>
-                <div class="form-group">
-                    <label for="address">Alamat</label>
-                    <textarea id="address" name="address" rows="3" placeholder="Masukkan alamat lengkap" required aria-describedby="address-help"></textarea>
-                    <p id="address-help" class="sr-only">Masukkan alamat lengkap tempat tinggal</p>
-                </div>
-                <div class="form-group">
-                    <label for="parent-name">Nama Orang Tua</label>
-                    <input type="text" id="parent-name" name="parent-name" placeholder="Masukkan nama orang tua" required aria-describedby="parent-name-help">
-                    <p id="parent-name-help" class="sr-only">Masukkan nama lengkap orang tua/wali</p>
-                </div>
-                <div class="form-group">
-                    <label for="parent-phone">Nomor Telepon Orang Tua</label>
-                    <input type="tel" id="parent-phone" name="parent-phone" placeholder="Masukkan nomor telepon" required aria-describedby="parent-phone-help">
-                    <p id="parent-phone-help" class="sr-only">Masukkan nomor telepon orang tua yang aktif</p>
-                </div>
-                <div class="form-group">
-                    <label for="documents">Unggah Dokumen (Akta Kelahiran, Ijazah, dll.)</label>
-                    <input type="file" id="documents" name="documents" accept=".pdf,.jpg,.png" multiple required aria-describedby="documents-help">
-                    <p id="documents-help" class="sr-only">Unggah dokumen seperti akta kelahiran dan ijazah dalam format PDF, JPG, atau PNG</p>
-                </div>
-                <button type="submit" class="submit-button" aria-label="Kirim formulir pendaftaran">Kirim Pendaftaran</button>
-            </form>
-            <p id="form-feedback" style="display: none; margin-top: 10px;" aria-live="polite"></p>
-        </div>
-    </section>
-    
-    <footer class="footer" aria-label="Footer MTs Darul Falah">
-        <div class="footer-container">
-            <div class="footer-info">
-                <h4>MTs Darul Falah Cukangbungur</h4>
-                <p>Kp. Cukang Bungur, Kecamatan Parungponteng, Kabupaten Tasikmalaya, Jawa Barat</p>
-                <p>Email: info@mtsdarulfalah.sch.id | Telepon: (0265) 123456</p>
-            </div>
-            <div class="footer-links">
-                <h4>Tautan Cepat</h4>
-                <ul>
-                    <li><a href="index.html">Beranda</a></li>
-                    <li><a href="profil.html">Profil</a></li>
-                    <li><a href="ekskul.html">Ekstrakurikuler</a></li>
-                    <li><a href="galeri.html">Galeri</a></li>
-                    <li><a href="kontak.html">Kontak</a></li>
-                    <li><a href="daftar.html">PPDB</a></li>
-                </ul>
-            </div>
-            <div class="footer-copyright">
-                <p>&copy; 2025 MTs Darul Falah Cukangbungur. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+  <div class="container">
+    <h1>Penerimaan Peserta Didik Baru</h1>
+    <p>
+      Kami mengumumkan pembukaan penerimaan peserta didik baru untuk tahun ajaran 2025/2026. 
+      Kami mengundang para calon siswa yang berminat untuk bergabung dan menempuh pendidikan di Sekolah kami. 
+      Jangan lewatkan kesempatan ini untuk bergabung dengan komunitas belajar yang berkualitas. 
+      Jadilah bagian dari perjalanan pendidikan yang unggul dan bermakna!
+    </p>
 
-    <button class="back-to-top" aria-label="Kembali ke atas">Kembali ke Atas</button>
+    <!-- FORM PENDAFTARAN -->
+    <div class="form-box">
+      <form id="ppdbForm">
+        <!-- ================= Data Pendaftaran ================= -->
+        <h2>Data Pendaftaran</h2>
+        <div class="form-group">
+          <label for="jenis">Jenis Pendaftaran <span>*</span></label>
+          <select id="jenis" name="jenis" required>
+            <option value="">Pilihan</option>
+            <option value="baru">Siswa Baru</option>
+            <option value="pindahan">Pindahan</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="jalur">Jalur Pendaftaran <span>*</span></label>
+          <select id="jalur" name="jalur" required>
+            <option value="">Pilihan</option>
+            <option value="reguler">Reguler</option>
+            <option value="prestasi">Prestasi</option>
+            <option value="afirmasi">Afirmasi</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="nik">NIK / No. KITAS <span>*</span></label>
+          <input type="text" id="nik" name="nik" placeholder="Masukkan NIK / No. KITAS" required>
+        </div>
+        <div class="form-group">
+          <label for="sekolah">Nama Sekolah Asal <span>*</span></label>
+          <input type="text" id="sekolah" name="sekolah" placeholder="Nama Sekolah Asal" required>
+        </div>
 
-    <script src="main.js"></script>
+        <!-- ================= Data Pribadi ================= -->
+        <h2>Data Pribadi</h2>
+        <div class="form-group">
+          <label for="nama">Nama Lengkap <span>*</span></label>
+          <input type="text" id="nama" name="nama" placeholder="Nama Lengkap" required>
+        </div>
+        <div class="form-group">
+          <label for="nisn">NISN <span>*</span></label>
+          <input type="text" id="nisn" name="nisn" placeholder="NISN" required>
+        </div>
+        <div class="form-group">
+          <label for="jk">Jenis Kelamin <span>*</span></label>
+          <select id="jk" name="jk" required>
+            <option value="">Pilihan</option>
+            <option value="L">Laki-Laki</option>
+            <option value="P">Perempuan</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="tempatLahir">Tempat Lahir <span>*</span></label>
+          <input type="text" id="tempatLahir" name="tempatLahir" placeholder="Tempat Lahir" required>
+        </div>
+        <div class="form-group">
+          <label for="tglLahir">Tanggal Lahir <span>*</span></label>
+          <input type="date" id="tglLahir" name="tglLahir" required>
+        </div>
+        <div class="form-group">
+          <label for="agama">Agama dan Kepercayaan <span>*</span></label>
+          <select id="agama" name="agama" required>
+            <option value="">Pilihan</option>
+            <option value="islam">Islam</option>
+            <option value="kristen">Kristen</option>
+            <option value="katolik">Katolik</option>
+            <option value="hindu">Hindu</option>
+            <option value="budha">Budha</option>
+            <option value="konghucu">Konghucu</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="kewarganegaraan">Kewarganegaraan <span>*</span></label>
+          <select id="kewarganegaraan" name="kewarganegaraan" required>
+            <option value="">Pilihan</option>
+            <option value="wni">WNI</option>
+            <option value="wna">WNA</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="alamat">Alamat Jalan <span>*</span></label>
+          <textarea id="alamat" name="alamat" placeholder="Alamat Jalan" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="desa">Desa/Kelurahan <span>*</span></label>
+          <input type="text" id="desa" name="desa" placeholder="Desa/Kelurahan" required>
+        </div>
+        <div class="form-group">
+          <label for="kecamatan">Kecamatan <span>*</span></label>
+          <input type="text" id="kecamatan" name="kecamatan" placeholder="Kecamatan" required>
+        </div>
+        <div class="form-group">
+          <label for="kabupaten">Kabupaten/Kota <span>*</span></label>
+          <input type="text" id="kabupaten" name="kabupaten" placeholder="Kabupaten/Kota" required>
+        </div>
+        <div class="form-group">
+          <label for="kodepos">Kode Pos <span>*</span></label>
+          <input type="text" id="kodepos" name="kodepos" placeholder="Kode Pos" required>
+        </div>
+        <div class="form-group">
+          <label for="tinggal">Tempat Tinggal <span>*</span></label>
+          <select id="tinggal" name="tinggal" required>
+            <option value="">Pilihan</option>
+            <option value="ortu">Bersama Orang Tua</option>
+            <option value="wali">Bersama Wali</option>
+            <option value="asrama">Asrama</option>
+            <option value="lainnya">Lainnya</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="anakKe">Anak Ke Berapa <span>*</span></label>
+          <input type="number" id="anakKe" name="anakKe" min="1" required>
+        </div>
+        <div class="form-group">
+          <label for="saudara">Jumlah Saudara Kandung <span>*</span></label>
+          <input type="number" id="saudara" name="saudara" min="0" required>
+        </div>
+        <div class="form-group">
+          <label for="kip">Memiliki KIP <span>*</span></label>
+          <select id="kip" name="kip" required>
+            <option value="">Pilihan</option>
+            <option value="ya">Ya</option>
+            <option value="tidak">Tidak</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="menerimaKIP">Akan Menerima KIP? <span>*</span></label>
+          <select id="menerimaKIP" name="menerimaKIP" required>
+            <option value="">Pilihan</option>
+            <option value="ya">Ya</option>
+            <option value="tidak">Tidak</option>
+          </select>
+        </div>
+
+        <!-- ================= Data Ayah ================= -->
+        <h2>Data Ayah Kandung</h2>
+        <div class="form-group"><label>Nama Lengkap Ayah *</label><input type="text" required></div>
+        <div class="form-group"><label>NIK Ayah *</label><input type="text" required></div>
+        <div class="form-group"><label>Tempat Lahir Ayah *</label><input type="text" required></div>
+        <div class="form-group"><label>Tanggal Lahir Ayah *</label><input type="date" required></div>
+        <div class="form-group"><label>Pendidikan Ayah *</label><select required><option value="">Pilihan</option></select></div>
+        <div class="form-group"><label>Pekerjaan Ayah *</label><select required><option value="">Pilihan</option></select></div>
+        <div class="form-group"><label>Penghasilan Bulanan Ayah *</label><select required><option value="">Pilihan</option></select></div>
+
+        <!-- ================= Data Ibu ================= -->
+        <h2>Data Ibu Kandung</h2>
+        <div class="form-group"><label>Nama Lengkap Ibu *</label><input type="text" required></div>
+        <div class="form-group"><label>NIK Ibu *</label><input type="text" required></div>
+        <div class="form-group"><label>Tempat Lahir Ibu *</label><input type="text" required></div>
+        <div class="form-group"><label>Tanggal Lahir Ibu *</label><input type="date" required></div>
+        <div class="form-group"><label>Pendidikan Ibu *</label><select required><option value="">Pilihan</option></select></div>
+        <div class="form-group"><label>Pekerjaan Ibu *</label><select required><option value="">Pilihan</option></select></div>
+        <div class="form-group"><label>Penghasilan Bulanan Ibu *</label><select required><option value="">Pilihan</option></select></div>
+
+        <!-- ================= Kontak ================= -->
+        <h2>Kontak</h2>
+        <div class="form-group"><label>Nomor Handphone *</label><input type="tel" required></div>
+        <div class="form-group"><label>Email</label><input type="email"></div>
+
+        <!-- ================= Unggah Dokumen ================= -->
+<h2>Unggah Dokumen</h2>
+
+<div class="form-group">
+  <label>Unggah Pas Foto *</label>
+  <input type="file" id="foto" accept=".jpg,.jpeg,.png" required>
+  <div class="preview" id="previewFoto"></div>
+</div>
+
+<div class="form-group">
+  <label>Unggah Kartu Keluarga *</label>
+  <input type="file" id="kk" accept=".jpg,.jpeg,.png" required>
+  <div class="preview" id="previewKK"></div>
+</div>
+
+<div class="form-group">
+  <label>Unggah Akta Lahir *</label>
+  <input type="file" id="akta" accept=".jpg,.jpeg,.png" required>
+  <div class="preview" id="previewAkta"></div>
+</div>
+
+<div class="form-group">
+  <label>Unggah KIP (Opsional)</label>
+  <input type="file" id="kipDoc" accept=".jpg,.jpeg,.png">
+  <div class="preview" id="previewKip"></div>
+</div>
+
+<div class="form-group">
+  <label>Unggah Kartu PKH (Opsional)</label>
+  <input type="file" id="pkhDoc" accept=".jpg,.jpeg,.png">
+  <div class="preview" id="previewPkh"></div>
+</div>
+
+        <!-- Tombol Submit -->
+        <button type="submit" class="btn-submit">Daftar Sekarang</button>
+      </form>
+    </div>
+  </div>
+  <script src="main.js"></script>
 </body>
 </html>
