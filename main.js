@@ -374,4 +374,44 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 5000);
         });
     }
+    // jerona galeri seperti daftar,dokumentasi,kegiatan //
+    let thumbnails = document.querySelectorAll(".thumbnail-row img");
+    let mainImage = document.getElementById("mainImage");
+    let currentIndex = 0;
+    let autoSlide;
+
+    function changeImage(element, manual = false) {
+        mainImage.classList.add("fade");
+
+        setTimeout(() => {
+            mainImage.src = element.src;
+
+            thumbnails.forEach(img => img.classList.remove("active"));
+            element.classList.add("active");
+
+            mainImage.classList.remove("fade");
+        }, 400); // setengah durasi transition
+
+        currentIndex = Array.from(thumbnails).indexOf(element);
+
+        if (manual) {
+            resetSlideshow();
+        }
+    }
+
+    function startSlideshow() {
+        autoSlide = setInterval(() => {
+            currentIndex = (currentIndex + 1) % thumbnails.length;
+            changeImage(thumbnails[currentIndex]);
+        }, 3000);
+    }
+
+    function resetSlideshow() {
+        clearInterval(autoSlide);
+        startSlideshow();
+    }
+
+    window.onload = () => {
+        startSlideshow();
+    };
 }); 
