@@ -1,8 +1,10 @@
+/* ====== Base Style ====== */
 body {
   font-family: Arial, sans-serif;
   background-color: #f7f7f7;
   margin: 0;
   padding: 0;
+  padding-top: 120px; 
 }
 
 .container {
@@ -30,6 +32,7 @@ p {
   margin-bottom: 30px;
 }
 
+/* ====== Form ====== */
 .form-box {
   background: #e9f5ff;
   padding: 20px;
@@ -87,4 +90,705 @@ p {
 .btn-submit:hover {
   background: #0056b3;
 }
+
+/* ====== NAVBAR ====== */
+:root {
+  --background-nav: #ffffff;
+  --text-color: #103481;
+  --primary-color: #007bff;
+  --hover-color: #0056b3;
+  --accent-color: #007bff;
+  --shadow: 0 3px 5px rgba(103, 99, 99, 0.2);
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background: var(--background-nav);
+  box-shadow: var(--shadow);
+  z-index: 1000;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  margin: 0 auto;
+  height: 100px;
+}
+
+.sekolah-header {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: var(--text-color);
+}
+
+.logo {
+  height: 70px;
+  margin-right: 10px;
+  margin-left: 40px;
+}
+
+.nama-sekolah {
+  display: flex;
+  flex-direction: column;
+}
+
+.nama-sekolah h2 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+               'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 40px;
+  color: #103481;
+  padding: 0;
+  font-weight: bold;
+  margin: 0;
+}
+
+.nama-sekolah p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+               'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  color: #103481;
+  padding: 0;
+  margin: 0;
+}
+
+/* ====== Hamburger ====== */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--text-color);
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ====== Menu Utama ====== */
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  color: var(--text-color);
+  font-weight: bold;
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  display: block;
+}
+
+nav ul li a:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+/* Tombol khusus */
+.tombol1 {
+  background: var(--primary-color);
+  margin-left: 30px;
+  color: #fff !important;
+  border-radius: 10px;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.tombol1:hover {
+  background: var(--hover-color);
+}
+
+/* ====== Dropdown ====== */
+.dropdown1, .dropdown2 {
+  position: relative;
+}
+
+.submenu1, .submenu2 {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--background-nav);
+  box-shadow: var(--shadow);
+  min-width: 200px;
+  z-index: 1001;
+}
+
+.dropdown1:hover .submenu1,
+.dropdown2:hover .submenu2 {
+  display: block;
+}
+
+.submenu1 li, .submenu2 li {
+  padding: 0;
+}
+
+.submenu1 li a, .submenu2 li a {
+  display: block;
+  padding: 10px;
+  color: var(--text-color);
+  font-weight: normal;
+}
+
+.submenu1 li a:hover, .submenu2 li a:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 992px) {
+  .wrapper {
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    width: 100%;
+  }
+
+  .menu.active {
+    display: block;
+    background: var(--background-nav);
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li a {
+    padding: 15px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding-top: 140px; 
+  }
+
+  .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-group label {
+    margin-bottom: 5px;
+    flex: unset;
+  }
+
+  .nama-sekolah h2 {
+    font-size: 28px;
+  }
+
+  .nama-sekolah p {
+    font-size: 16px;
+  }
+
+  .logo {
+    margin-left: 10px;
+    height: 50px;
+  }
+  
+}
+
+/* style.css - CSS umum untuk semua halaman */
+/* style.css - CSS umum untuk semua halaman */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #007bff;
+    --hover-color: #1027d4;
+    --background-nav: #ffffff;
+    --background-footer: #1027d4;
+    --background-content: #ffffff;
+    --text-color: #000000;
+    --text-secondary: #fff7f7;
+    --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --accent-color: #1027d4;
+    --footer-background: #f8f9fa;
+    --menu-hover-bg: #f0f5ff;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: var(--background-content);
+    padding-top: 100px; /* Untuk mengkompensasi navbar fixed */
+}
+
+/* Navigation Styles */
+nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: var(--background-nav);
+    box-shadow: 0 3px 5px rgba(103, 99, 99, 0.2);
+    z-index: 1000;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    margin: 0 auto;
+    height: 100px;
+}
+
+.sekolah-header {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: var(--text-color);
+}
+
+.logo {
+    height: 70px;
+    margin-right: 10px;
+    margin-left: 40px;
+}
+
+.nama-sekolah {
+    display: flex;
+    flex-direction: column;
+}
+
+.nama-sekolah h2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    color: #103481;
+    padding: 0;
+    font-weight: bold;
+}
+
+.nama-sekolah p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    color: #103481;
+    padding: 0;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--text-color);
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    font-weight: bold;
+    padding: 15px 20px;
+    transition: all 0.3s ease-in-out;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: var(--menu-hover-bg);
+    color: var(--accent-color);
+}
+
+.tombol1 {
+    background: rgb(11, 47, 224);
+    margin-left: 30px;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.tombol1:hover {
+    background: var(--hover-color);
+}
+
+/* Dropdown Styles - Diperbarui */
+.dropdown1, .dropdown2 {
+    position: relative;
+}
+
+.submenu1, .submenu2 {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--background-nav);
+    box-shadow: var(--shadow);
+    min-width: 220px;
+    z-index: 1001;
+    border-top: 3px;
+}
+
+.dropdown1:hover .submenu1,
+.dropdown2:hover .submenu2 {
+    display: block;
+}
+
+.submenu1 li, .submenu2 li {
+    padding: 0;
+}
+
+.submenu1 li a, .submenu2 li a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--text-color);
+    font-weight: normal;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.submenu1 li a:hover, .submenu2 li a:hover {
+    background-color: var(--menu-hover-bg);
+    color: var(--accent-color);
+}
+
+/* Footer Styles */
+.footer {
+  background: #3b82f6; 
+  color: #fff;
+  padding: 30px 20px 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+  align-items: start;
+}
+
+.footer-left {
+  text-align: left;
+}
+
+.footer-logo {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.footer-left h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #f1f5f9;
+}
+
+.footer-left h5 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #f1f5f9;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons a {
+  font-size: 20px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffd700; /* kuning saat hover */
+  transform: scale(1.2);
+}
+
+.footer-links h4,
+.footer-info h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #f1f5f9;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #352fb1;
+}
+
+.footer-info p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #f8fafc;
+  margin-bottom: auto;
+}
+
+.footer-info a {
+  color: #eeeef5;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.3);
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 15px;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: #e2e8f0;
+  margin: 0;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-icons a {
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+/* footer Warna default sesuai brand */
+.social-icons a:nth-child(1) { color: #25D366; } /* WhatsApp */
+.social-icons a:nth-child(2) { color: #1877F2; } /* Facebook */
+.social-icons a:nth-child(3) { color: #E4405F; } /* Instagram */
+.social-icons a:nth-child(4) { color: #FF0000; } /* YouTube */
+.social-icons a:nth-child(5) { color: #010101; } /* TikTok */
+
+/* footer Hover dengan efek glow */
+.social-icons a:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 6px currentColor);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: none;
+    transition: background 0.3s ease;
+}
+
+.back-to-top.show {
+    display: block;
+}
+
+.back-to-top:hover {
+    background: var(--hover-color);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+    .wrapper {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 0;
+    }
+    
+    .sekolah-header {
+        width: 100%;
+        justify-content: flex-start;
+        margin-bottom: 10px;
+    }
+    
+    .logo {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding-top: 80px;
+    }
+    
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 30px;
+    }
+    
+    .menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--background-nav);
+        box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+        padding: 10px 0;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    
+    .menu.active {
+        display: block;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    nav ul li {
+        margin: 0;
+        width: 100%;
+        text-align: left;
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 12px 20px;
+        width: 100%;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .tombol1 {
+        margin-left: 0;
+        width: auto;
+        display: inline-block;
+        margin: 10px 20px;
+    }
+    
+    /* Dropdown styles for mobile */
+    .submenu1, .submenu2 {
+        position: static;
+        display: none;
+        width: 100%;
+        box-shadow: none;
+        border-top: none;
+    }
+    
+    .dropdown1.active .submenu1,
+    .dropdown2.active .submenu2 {
+        display: block;
+    }
+    
+    .submenu1 li, .submenu2 li {
+        padding: 0;
+    }
+    
+    .submenu1 li a, .submenu2 li a {
+        padding-left: 40px;
+        background-color: #f9f9f9;
+    }
+    
+    .nama-sekolah h2 {
+        font-size: 28px;
+    }
+    
+    .nama-sekolah p {
+        font-size: 16px;
+    }
+    
+    .logo {
+        height: 50px;
+    }
+}
+
+
 

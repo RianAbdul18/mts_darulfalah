@@ -178,12 +178,13 @@ nav ul li a:hover {
 }
 /* Khusus halaman Harkitnas */
 .harkitnas-section .section-description {
-    font-size: 18px;
+    font-size: 25px;
     line-height: 1.6;
     color: #444;
     max-width: 2000px;
     padding: 0 15px;
     text-align: justify;
+    font-weight: bold;
 }
 
 
@@ -203,6 +204,7 @@ nav ul li a:hover {
     object-fit: cover;
     transition: opacity 0.3s ease-in-out;
 }
+
 /* Slideshow Fade + Zoom */
 #mainImage {
     opacity: 1;

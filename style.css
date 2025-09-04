@@ -4,7 +4,7 @@
 :root {
     --primary-color: #007bff;
     --hover-color: #1027d4;
-    --background-nav: #ececec;
+    --background-nav: #ffffff;
     --background-footer: #1027d4;
     --background-content: #ffffff;
     --text-color: #000000;
@@ -12,6 +12,7 @@
     --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     --accent-color: #1027d4;
     --footer-background: #f8f9fa;
+    --menu-hover-bg: #f0f5ff;
 }
 
 /* Reset and Base Styles */
@@ -25,6 +26,7 @@
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background: var(--background-content);
+    padding-top: 100px; /* Untuk mengkompensasi navbar fixed */
 }
 
 /* Navigation Styles */
@@ -128,22 +130,18 @@ nav ul li {
 nav ul li a {
     color: var(--text-color);
     font-weight: bold;
-    padding: 20px;
+    padding: 15px 20px;
     transition: all 0.3s ease-in-out;
+    display: block;
 }
 
 nav ul li a:hover {
-    background-color: var(--accent-color);
-    color: #fff;
+    background-color: var(--menu-hover-bg);
+    color: var(--accent-color);
 }
 
-/* nav ul li a[aria-current="page"] {
-    background-color: var(--accent-color);
-    color: #fff;
-} */
-
 .tombol1 {
-    background: var(--primary-color);
+    background: rgb(11, 47, 224);
     margin-left: 30px;
     color: #fff;
     border-radius: 10px;
@@ -155,7 +153,7 @@ nav ul li a:hover {
     background: var(--hover-color);
 }
 
-/* Dropdown Styles */
+/* Dropdown Styles - Diperbarui */
 .dropdown1, .dropdown2 {
     position: relative;
 }
@@ -167,87 +165,160 @@ nav ul li a:hover {
     left: 0;
     background: var(--background-nav);
     box-shadow: var(--shadow);
-    min-width: 200px;
+    min-width: 220px;
     z-index: 1001;
+    border-top: 3px;
 }
 
-.dropdown1.active .submenu1,
-.dropdown2.active .submenu2 {
+.dropdown1:hover .submenu1,
+.dropdown2:hover .submenu2 {
     display: block;
 }
 
 .submenu1 li, .submenu2 li {
-    padding: 10px;
+    padding: 0;
 }
 
 .submenu1 li a, .submenu2 li a {
     display: block;
-    padding: 10px;
+    padding: 12px 20px;
     color: var(--text-color);
     font-weight: normal;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .submenu1 li a:hover, .submenu2 li a:hover {
-    background-color: var(--accent-color);
-    color: #fff;
+    background-color: var(--menu-hover-bg);
+    color: var(--accent-color);
 }
 
 /* Footer Styles */
 .footer {
-    background: var(--background-footer);
-    padding: 40px 0;
-    width: 100%;
-    border-top: 1px solid #ddd;
+  background: #3b82f6; 
+  color: #fff;
+  padding: 50px 20px 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .footer-container {
-    width: 95%;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+  align-items: start;
 }
 
-.footer-info h4,
-.footer-links h4 {
-    font-size: 18px;
-    color: var(--text-secondary);
-    margin-bottom: 15px;
+.footer-left {
+  text-align: left;
 }
 
-.footer-info p {
-    font-size: 14px;
-    color: var(--text-secondary);
-    line-height: 1.6;
+.footer-logo {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.footer-left h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #f1f5f9;
+}
+
+.footer-left h5 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #f1f5f9;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons a {
+  font-size: 20px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffd700; /* kuning saat hover */
+  transform: scale(1.2);
+}
+
+.footer-links h4,
+.footer-info h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #f1f5f9;
 }
 
 .footer-links ul {
-    list-style: none;
+  list-style: none;
+  padding: 0;
 }
 
 .footer-links ul li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .footer-links ul li a {
-    color: var(--text-secondary);
-    font-size: 14px;
-    transition: color 0.3s ease-in-out;
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
 }
 
 .footer-links ul li a:hover {
-    color: var(--primary-color);
+  color: #352fb1;
 }
 
-.footer-copyright {
-    grid-column: span 3;
-    text-align: center;
-    margin-top: 20px;
+.footer-info p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #f8fafc;
 }
 
-.footer-copyright p {
-    font-size: 12px;
-    color: var(--text-secondary);
+.footer-info a {
+  color: #eeeef5;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.3);
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: #e2e8f0;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-icons a {
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+/* footer Warna default sesuai brand */
+.social-icons a:nth-child(1) { color: #25D366; } /* WhatsApp */
+.social-icons a:nth-child(2) { color: #1877F2; } /* Facebook */
+.social-icons a:nth-child(3) { color: #E4405F; } /* Instagram */
+.social-icons a:nth-child(4) { color: #FF0000; } /* YouTube */
+.social-icons a:nth-child(5) { color: #010101; } /* TikTok */
+
+/* footer Hover dengan efek glow */
+.social-icons a:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 6px currentColor);
 }
 
 /* Back to Top Button */
@@ -275,96 +346,109 @@ nav ul li a:hover {
 
 /* Responsive Design */
 @media screen and (max-width: 900px) {
-.sekolah-header {
-        flex-direction: row;
-        align-items: flex-start;
+    .wrapper {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 0;
+    }
+    
+    .sekolah-header {
+        width: 100%;
+        justify-content: flex-start;
+        margin-bottom: 10px;
+    }
+    
+    .logo {
         margin-left: 10px;
     }
-
-    .logo {
-    height: 60px;
-    margin-right: 10px;
-    margin-left: 3px;
-    }
-
-    .nama-sekolah {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .nama-sekolah h2 {
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-size: 30px;
-        color: #103481;
-        padding: 0;
-        font-weight: bold;
-    }
-
-    .nama-sekolah p {
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-size: 15px;
-        color: #103481;
-        padding: 0
-    }
 }
+
 @media screen and (max-width: 768px) {
+    body {
+        padding-top: 80px;
+    }
+    
     .hamburger {
         display: block;
+        position: absolute;
+        right: 20px;
+        top: 30px;
     }
-
+    
     .menu {
         display: none;
         position: absolute;
-        top: 90px;
-        right: 20px;
-        width: 200px;
+        top: 100%;
+        left: 0;
+        width: 100%;
         background: var(--background-nav);
-        padding: 5px;
-        box-shadow: 0 3px 5px rgba(103, 99, 99, 0.2);
+        box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+        padding: 10px 0;
+        max-height: 80vh;
+        overflow-y: auto;
     }
-
+    
     .menu.active {
         display: block;
     }
-
     
     nav ul {
         flex-direction: column;
+        width: 100%;
     }
-
+    
     nav ul li {
-        margin: 20px 0;
+        margin: 0;
+        width: 100%;
+        text-align: left;
     }
-
+    
     nav ul li a {
-        padding: 5px;
+        display: block;
+        padding: 12px 20px;
         width: 100%;
-        text-align: center;
+        border-bottom: 1px solid #f0f0f0;
     }
-
+    
     .tombol1 {
-        margin-left: 5px;
-        width: 100%;
-        text-align: center;
+        margin-left: 0;
+        width: auto;
+        display: inline-block;
+        margin: 10px 20px;
     }
-
-    .dropdown1 .submenu1, .dropdown2 .submenu2 {
+    
+    /* Dropdown styles for mobile */
+    .submenu1, .submenu2 {
         position: static;
         display: none;
         width: 100%;
+        box-shadow: none;
+        border-top: none;
     }
-
-    .dropdown1.active .submenu1, .dropdown2.active .submenu2 {
+    
+    .dropdown1.active .submenu1,
+    .dropdown2.active .submenu2 {
         display: block;
-        padding-bottom: 10px;
     }
-
-    .footer-container {
-        grid-template-columns: 1fr;
-        text-align: center;
+    
+    .submenu1 li, .submenu2 li {
+        padding: 0;
     }
-
-    .footer-copyright {
-        grid-column: auto;
+    
+    .submenu1 li a, .submenu2 li a {
+        padding-left: 40px;
+        background-color: #f9f9f9;
+    }
+    
+    .nama-sekolah h2 {
+        font-size: 28px;
+    }
+    
+    .nama-sekolah p {
+        font-size: 16px;
+    }
+    
+    .logo {
+        height: 50px;
     }
 }

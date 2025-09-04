@@ -1,14 +1,37 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Toggle hamburger menu
-    const hamburger = document.querySelector('.hamburger');
-    const menu = document.querySelector('.menu');
-    if (hamburger && menu) {
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            menu.classList.toggle('active');
-            hamburger.setAttribute('aria-label', hamburger.classList.contains('active') ? 'Tutup menu navigasi' : 'Buka menu navigasi');
-        });
+    // Toggle hamburger menu 
+const hamburger = document.querySelector('.hamburger');
+const menu = document.querySelector('.menu');
+
+if (hamburger && menu) {
+    hamburger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        this.classList.toggle('active');
+        menu.classList.toggle('active');
+        
+        const isExpanded = this.classList.contains('active');
+        this.setAttribute('aria-expanded', isExpanded);
+        this.setAttribute('aria-label', isExpanded ? 'Tutup menu navigasi' : 'Buka menu navigasi');
+    });
+}
+
+// Tutup menu ketika klik di luar
+document.addEventListener('click', function(e) {
+    if (menu.classList.contains('active') && 
+        !e.target.closest('.menu') && 
+        !e.target.closest('.hamburger')) {
+        hamburger.classList.remove('active');
+        menu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Buka menu navigasi');
     }
+});
+
+document.querySelectorAll('.dropdown1, .dropdown2').forEach(dropdown => {
+    dropdown.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+});
 
     // Toggle dropdown1 submenu on click
     const dropdowns1 = document.querySelectorAll('.dropdown1');
@@ -47,7 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
     // Close all submenus function
     function closeAllSubmenus() {
         [dropdowns1, dropdowns2].forEach(dropdowns => {
@@ -437,6 +459,152 @@ document.getElementById("ppdbForm").addEventListener("submit", function(event) {
 
   alert("✅ Pendaftaran berhasil! Data sudah tersimpan.");
   this.reset();
+}); 
+}); 
+
+// KLIK GAMBAR THUMBNAIL DI GALERI //
+
+function changeImage(element) {
+   
+    const caption = element.getAttribute('data-caption');
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = element.src;
+    mainImage.alt = element.alt;
+    
+    document.getElementById('imageCaption').textContent = caption;
+
+    const thumbnails = document.querySelectorAll('.thumbnail-row img');
+    thumbnails.forEach(thumb => {
+        thumb.classList.remove('active');
+    });
+    
+    element.classList.add('active');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const thumbnails = document.querySelectorAll('.thumbnail-row img');
+    
+    thumbnails.forEach(thumb => {
+        thumb.addEventListener('click', function() {
+            changeImage(this);
+        });
+    });
 });
 
-}); 
+
+// STAF PENGAJAR SLIDE SHOW //
+
+document.addEventListener('DOMContentLoaded', function() {
+    const slideshowContainer = document.querySelector('.staff-slideshow-container');
+    const slides = document.querySelectorAll('.staff-slide');
+    const dotsContainer = document.querySelector('.slideshow-dots');
+    
+    let currentSlide = 0;
+    const slideCount = slides.length;
+    let autoPlayInterval;
+
+    // Generate dots
+    for (let i = 0; i < slideCount; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.setAttribute('data-slide', i);
+        dotsContainer.appendChild(dot);
+    }
+    
+    const dots = document.querySelectorAll('.dot');
+    
+    function goToSlide(slideIndex) {
+        if (slideIndex < 0) {
+            currentSlide = slideCount - 1;
+        } else if (slideIndex >= slideCount) {
+            currentSlide = 0;
+        } else {
+            currentSlide = slideIndex;
+        }
+        
+        const offset = -currentSlide * 100;
+        slideshowContainer.style.transform = `translateX(${offset}%)`;
+        
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[currentSlide].classList.add('active');
+        
+        resetAutoPlay();
+    }
+    
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(() => {
+            goToSlide(currentSlide + 1);
+        }, 3000);
+    }
+    
+    function resetAutoPlay() {
+        clearInterval(autoPlayInterval);
+        startAutoPlay();
+    }
+
+    // Klik dots
+    dots.forEach(dot => {
+        dot.addEventListener('click', function() {
+            const slideIndex = parseInt(this.getAttribute('data-slide'));
+            goToSlide(slideIndex);
+        });
+    });
+
+    // Swipe gesture (mobile)
+    let startX = 0;
+    let endX = 0;
+    
+    slideshowContainer.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+    
+    slideshowContainer.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].clientX;
+        if (startX - endX > 50) {
+            goToSlide(currentSlide + 1); // geser kiri → next
+        } else if (endX - startX > 50) {
+            goToSlide(currentSlide - 1); // geser kanan → prev
+        }
+    });
+
+    // Drag gesture (desktop)
+    let isDragging = false;
+    let dragStartX = 0;
+
+    slideshowContainer.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        dragStartX = e.clientX;
+    });
+
+    slideshowContainer.addEventListener('mouseup', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        let dragEndX = e.clientX;
+
+        if (dragStartX - dragEndX > 50) {
+            goToSlide(currentSlide + 1);
+        } else if (dragEndX - dragStartX > 50) {
+            goToSlide(currentSlide - 1);
+        }
+    });
+
+    // tampilkan slide pertama dulu
+    goToSlide(0);
+
+    // Auto play jalan
+    startAutoPlay();
+
+
+    // Pause saat hover
+    const slideshow = document.querySelector('.staff-slideshow');
+    slideshow.addEventListener('mouseenter', () => {
+        clearInterval(autoPlayInterval);
+    });
+    
+    slideshow.addEventListener('mouseleave', () => {
+        startAutoPlay();
+    });
+});
+
+

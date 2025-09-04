@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MTs Darul Falah</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="galeri.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informasi</title>
+  <link rel="stylesheet" href="s informasi.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-</body>
 <body>
-    <nav role="navigation">
+  
+     <nav role="navigation">
         <div class="wrapper">
             <div class="sekolah-header">
                 <img src="img/Logo-removebg-preview.png" alt="Logo MTs Darul Falah Cukangbungur" class="logo" loading="lazy" onerror="this.src='img/fallback.jpg'">
@@ -26,7 +26,7 @@
             </button>
             <div class="menu">
                 <ul>
-                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="index.html" aria-current="page">Beranda</a></li>
                     <li class="dropdown1">
                         <a href="#" class="profile-link" aria-expanded="false">Profil</a>
                         <ul class="submenu1">
@@ -49,56 +49,57 @@
                             <li><a href="ekskul.html#rebana">Rebana</a></li>
                         </ul>
                     </li>
-                    <li><a href="galeri.html" aria-current="page">Galeri</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
                     <li><a href="kontak.html">Kontak</a></li>
                     <li><a href="daftar.html" class="tombol1">PPDB</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <main>
-        <div class="navbar-galeri">
-            <span>Galeri Sekolah</span>
-        </div>
-        <section class="galeri-section">
-            <div class="galeri-container">
-                <div class="galeri-card">
-                    <a href="daftar-ulang.html" class="galeri-link" style="display:block;height:100%;width:100%">
-                        <div class="galeri-img galeri-placeholder">
-                            <span>Tidak Ada Gambar</span>
-                            <span class="galeri-icon"><img src="img/icon image.png" alt="icon galeri" style="width:2.2rem;height:2.2rem;"></span>
-                        </div>
-                        <div class="galeri-title">
-                            Kegiatan daftar Ulang Murid Baru Tahun Ajaran 2025/2026
-                        </div>
-                    </a>
-                </div>
-                <div class="galeri-card">
-                    <a href="dokumentasi-harkitnas.html" class="galeri-link" style="display:block;height:100%;width:100%">
-                        <div class="galeri-img">
-                            <img src="img/gambar-1.jpg" alt="Harkitnas 2025">
-                            <span class="galeri-icon"><img src="img/icon image.png" alt="icon galeri" style="width:2.2rem;height:2.2rem;"></span>
-                        </div>
-                        <div class="galeri-title">
-                            Dokumentasi Hari Kebangkitan Nasional (Harkitnas) 2025
-                        </div>
-                    </a>
-                </div>
-                <div class="galeri-card">
-                    <a href="kegiatan-siswa.html" class="galeri-link" style="display:block;height:100%;width:100%">
-                        <div class="galeri-img">
-                            <img src="img/gambar-2.jpg" alt="Kegiatan Siswa">
-                            <span class="galeri-icon"><img src="img/icon image.png" alt="icon galeri" style="width:2.2rem;height:2.2rem;"></span>
-                        </div>
-                        <div class="galeri-title">
-                            Kegiatan Siswa
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
+    
+  <div class="container">
+    <!-- Kotak biru untuk judul -->
+    <div class="section-title">
+      <h2>Informasi</h2>
+    </div>
 
-       <footer class="footer">
+    <div class="grid">
+      <!-- Card 1 -->
+      <div class="card">
+        <img src="img/gambar-1.jpg" alt="Berita 1">
+        <div class="card-content">
+          <p class="tanggal">7 Jul 2025</p>
+          <p class="judul">MTsN 14 Tasikmalaya Menggelar Daftar Ulang Bagi Peserta Didik Baru</p>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x250" alt="Berita 2">
+        <div class="card-content">
+          <p class="tanggal">2 Jul 2025</p>
+          <p class="judul">Antusias Pendidik dan Tenaga Kependidikan dalam Rapat Kerja (Raker) Perdana MTsN 14 Tasikmalaya</p>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x250" alt="Berita 3">
+        <div class="card-content">
+          <p class="tanggal">2 Jun 2025</p>
+          <p class="judul">Upacara Hari Lahir Pancasila sebagai momentum memperkuat karakter siswa MTsN 14 Tasikmalaya</p>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x250" alt="Berita 4">
+        <div class="card-content">
+          <p class="tanggal">20 May 2025</p>
+          <p class="judul">Harkitnas sebagai momentum menumbuhkan jiwa Nasionalisme, Patriotisme, dan karakter kebangsaan</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <footer class="footer">
   <div class="footer-container">
 
    <div class="footer-left">
@@ -150,6 +151,10 @@
     <p>&copy; 2025 MTs Darul Falah Cukangbungur Tasikmalaya. All rights reserved.</p>
   </div>
 </footer>
-  <script src="main.js"></script>
+
+    <button class="back-to-top" aria-label="Kembali ke atas">Kembali ke Atas</button>
+
+    <script src="main.js"></script>
+    
 </body>
 </html>

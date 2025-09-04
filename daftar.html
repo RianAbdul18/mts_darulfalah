@@ -5,9 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PPDB 2025/2026</title>
   <link rel="stylesheet" href="daftar.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+<nav role="navigation">
+        <div class="wrapper">
+            <div class="sekolah-header">
+                <img src="img/Logo-removebg-preview.png" alt="Logo MTs Darul Falah Cukangbungur" class="logo" loading="lazy" onerror="this.src='img/fallback.jpg'">
+                <div class="nama-sekolah">
+                    <h2>MTs Darul Falah</h2>
+                    <p>Cukangbungur</p>
+                </div>
+            </div>
+            <button class="hamburger" aria-label="Buka menu navigasi">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html" aria-current="page">Beranda</a></li>
+                    <li class="dropdown1">
+                        <a href="#" class="profile-link" aria-expanded="false">Profil</a>
+                        <ul class="submenu1">
+                            <li><a href="profil.html#profil-sekolah">Profil Sekolah</a></li>
+                            <li><a href="profil.html#sejarah-singkat">Sejarah Singkat</a></li>
+                            <li><a href="profil.html#visi-misi">Visi, Misi & Tujuan</a></li>
+                            <li><a href="profil.html#staf-pengajar">Staf Pengajar</a></li>
+                            <li><a href="profil.html#staf-kependidikan">Staf Tenaga Kependidikan</a></li>
+                            <li><a href="profil.html#fasilitas">Fasilitas</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown2">
+                        <a href="#" aria-expanded="false">Ekstrakurikuler</a>
+                        <ul class="submenu2">
+                            <li><a href="ekskul.html#pramuka">Pramuka</a></li>
+                            <li><a href="ekskul.html#perisaidiri">Perisai Diri</a></li>
+                            <li><a href="ekskul.html#voli">Voli</a></li>
+                            <li><a href="ekskul.html#marchingband">Marching Band</a></li>
+                            <li><a href="ekskul.html#marawis">Marawis</a></li>
+                            <li><a href="ekskul.html#rebana">Rebana</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                    <li><a href="daftar.html" class="tombol1">PPDB</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
   <div class="container">
     <h1>Penerimaan Peserta Didik Baru</h1>
     <p>
@@ -155,9 +201,50 @@
         <div class="form-group"><label>NIK Ayah *</label><input type="text" required></div>
         <div class="form-group"><label>Tempat Lahir Ayah *</label><input type="text" required></div>
         <div class="form-group"><label>Tanggal Lahir Ayah *</label><input type="date" required></div>
-        <div class="form-group"><label>Pendidikan Ayah *</label><select required><option value="">Pilihan</option></select></div>
-        <div class="form-group"><label>Pekerjaan Ayah *</label><select required><option value="">Pilihan</option></select></div>
-        <div class="form-group"><label>Penghasilan Bulanan Ayah *</label><select required><option value="">Pilihan</option></select></div>
+        <div class="form-group"><label>Pendidikan Ayah *</label><select required>
+          <option value="">Pilihan</option>
+          <option value="Tidak Sekolah">Tidak Sekolah
+          <option value="Putus SD">Putus SD
+          <option value="SD Sederajat">SD Sederajat
+          <option value="SMP Sederajat">SMP Sederajat
+          <option value="SMA Sederajat">SMA Sederajat
+          <option value="D1">D1
+          <option value="D2">D2
+          <option value="D3">D3
+          <option value="D4/S1">D4/S1
+          <option value="S2">S2
+          <option value="S3">S3
+         </select>
+        </div>
+        <div class="form-group"><label>Pekerjaan Ayah *</label><select required>
+        <option value="">Pilihan</option>
+        <option value="Tidak Bekerja">Tidak Bekerja
+        <option value="Nelayan">Nelayan
+        <option value="Petani">Petani
+        <option value="Peternak">Peternak
+        <option value="PNS/TNI/POLRI">PNS/TNI/POL
+        <option value="Karyawan Swasta">Karyawan Swasta
+        <option value="Pedagang Kecil">Pedagang Kecil
+        <option value="Pedagang Besar">Pedagang Besar
+        <option value="Wiraswasta">Wiraswasta
+        <option value="Wirausaha">Wirausaha
+        <option value="Buruh">Buruh
+        <option value="Pensiunan">Pensiunan
+        <option value="Lainnya">Lainnya
+        </select>
+       </div>
+        <div class="form-group"><label>Penghasilan Bulanan Ayah *</label><select required>
+        <option value="">Pilihan</option>
+        <option value="Kurang dari Rp 500.000">Kurang dari Rp 500.000
+        <option value="Rp 500.000 - Rp 999.999">Rp 500.000 - Rp 999.999
+        <option value="Rp 1.000.000 - Rp 1.999.999">Rp 1.000.000 - Rp 1.999.999
+        <option value="Rp 2.000.000 - Rp 4.999.999">Rp 2.000.000 - Rp 4.999.999
+        <option value="Rp 5.000.000 - Rp 20.000. 000">Rp 5.000.000 - Rp 20.000.000
+        <option value="Lebih dari Rp 20.000.000">Lebih dari Rp 20.000.000
+        <option value="Tidak Berpenghasilan">Tidak Berpenghasilan
+        <option value="Lainnya">Lainnya
+        </select>
+       </div>
 
         <!-- ================= Data Ibu ================= -->
         <h2>Data Ibu Kandung</h2>
@@ -165,16 +252,56 @@
         <div class="form-group"><label>NIK Ibu *</label><input type="text" required></div>
         <div class="form-group"><label>Tempat Lahir Ibu *</label><input type="text" required></div>
         <div class="form-group"><label>Tanggal Lahir Ibu *</label><input type="date" required></div>
-        <div class="form-group"><label>Pendidikan Ibu *</label><select required><option value="">Pilihan</option></select></div>
-        <div class="form-group"><label>Pekerjaan Ibu *</label><select required><option value="">Pilihan</option></select></div>
-        <div class="form-group"><label>Penghasilan Bulanan Ibu *</label><select required><option value="">Pilihan</option></select></div>
-
-        <!-- ================= Kontak ================= -->
+        <div class="form-group"><label>Pendidikan Ibu *</label><select required>
+        <option value="">Pilihan</option>
+          <option value="Tidak Sekolah">Tidak Sekolah
+          <option value="Putus SD">Putus SD
+          <option value="SD Sederajat">SD Sederajat
+          <option value="SMP Sederajat">SMP Sederajat
+          <option value="SMA Sederajat">SMA Sederajat
+          <option value="D1">D1
+          <option value="D2">D2
+          <option value="D3">D3
+          <option value="D4/S1">D4/S1
+          <option value="S2">S2
+          <option value="S3">S3
+         </select>
+        </div>
+        <div class="form-group"><label>Pekerjaan Ibu *</label><select required>
+        <option value="">Pilihan</option>
+        <option value="Tidak Bekerja">Tidak Bekerja
+        <option value="Nelayan">Nelayan
+        <option value="Petani">Petani
+        <option value="Peternak">Peternak
+        <option value="PNS/TNI/POLRI">PNS/TNI/POL
+        <option value="Karyawan Swasta">Karyawan Swasta
+        <option value="Pedagang Kecil">Pedagang Kecil
+        <option value="Pedagang Besar">Pedagang Besar
+        <option value="Wiraswasta">Wiraswasta
+        <option value="Wirausaha">Wirausaha
+        <option value="Buruh">Buruh
+        <option value="Pensiunan">Pensiunan
+        <option value="Lainnya">Lainnya
+        </select>
+       </div>
+        <div class="form-group"><label>Penghasilan Bulanan Ibu *</label><select required>
+       <option value="">Pilihan</option>
+        <option value="Kurang dari Rp 500.000">Kurang dari Rp 500.000
+        <option value="Rp 500.000 - Rp 999.999">Rp 500.000 - Rp 999.999
+        <option value="Rp 1.000.000 - Rp 1.999.999">Rp 1.000.000 - Rp 1.999.999
+        <option value="Rp 2.000.000 - Rp 4.999.999">Rp 2.000.000 - Rp 4.999.999
+        <option value="Rp 5.000.000 - Rp 20.000. 000">Rp 5.000.000 - Rp 20.000.000
+        <option value="Lebih dari Rp 20.000.000">Lebih dari Rp 20.000.000
+        <option value="Tidak Berpenghasilan">Tidak Berpenghasilan
+        <option value="Lainnya">Lainnya
+        </select>
+       </div>
+        <!-- kontak -->
         <h2>Kontak</h2>
         <div class="form-group"><label>Nomor Handphone *</label><input type="tel" required></div>
         <div class="form-group"><label>Email</label><input type="email"></div>
 
-        <!-- ================= Unggah Dokumen ================= -->
+       <!-- Dokumen -->
 <h2>Unggah Dokumen</h2>
 
 <div class="form-group">
@@ -212,6 +339,60 @@
       </form>
     </div>
   </div>
+
+     <footer class="footer">
+  <div class="footer-container">
+
+   <div class="footer-left">
+  <img src="img/Logo 2.png" alt="Logo Sekolah" class="footer-logo">
+  <h4>MTs Darul Falah Cukangbungur</h4>
+
+  <h5>Sosial Media</h5>
+  <div class="social-icons">
+    <a href="https://wa.me/6281234567890" target="_blank" aria-label="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a href="https://www.facebook.com/mtssn14tasik" target="_blank" aria-label="Facebook">
+      <i class="fa-brands fa-facebook"></i>
+    </a>
+    <a href="https://www.instagram.com/mtssn14tasik" target="_blank" aria-label="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="https://www.youtube.com/@mtssn14tasik" target="_blank" aria-label="YouTube">
+      <i class="fa-brands fa-youtube"></i>
+    </a>
+    <a href="https://www.tiktok.com/@mtssn14tasik" target="_blank" aria-label="TikTok">
+      <i class="fa-brands fa-tiktok"></i>
+    </a>
+  </div>
+</div>
+
+    <div class="footer-links">
+      <h4>Tautan Cepat</h4>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="ekskul.html">Ekstrakurikuler</a></li>
+        <li><a href="galeri.html">Galeri</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+        <li><a href="daftar.html">PPDB</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-info">
+      <h4>Kontak Kami</h4>
+      <p>Kp. Cukangbungur, Kec. Parungponteng,<br>
+         Kab. Tasikmalaya, Jawa Barat</p>
+      <p>Email: <a href="mailto:info@mtsdarulfalah.sch.id">info@mtsdarulfalah.sch.id</a><br>
+         Telepon: (0265) 123456</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 MTs Darul Falah Cukangbungur Tasikmalaya. All rights reserved.</p>
+  </div>
+</footer>
+
   <script src="main.js"></script>
 </body>
 </html>
