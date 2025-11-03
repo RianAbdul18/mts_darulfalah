@@ -1,9 +1,9 @@
  body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
-  color: #333;
-  margin: 0;
-  padding-top:100px; /* kasih jarak supaya konten ga ketutup navbar */
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding-top: var(--nav-offset); /* kasih jarak supaya konten ga ketutup navbar */
 }
 
 nav {

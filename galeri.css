@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 0;
-    margin-top: 90px;
+    margin-top: 0; /* gunakan body padding-top di style.css untuk offset header */
 }
 .navbar-galeri span {
     color: #fff;
@@ -28,7 +28,10 @@
 }
 .galeri-section {
     background: #fff;
-    padding: 40px 0 60px 0;
+    padding: 20px 0 40px 0;
+    margin-top: 20px; /* beri sedikit jarak dari navbar-galeri */
+    /* offset agar anchor/scroll tidak tertutup header fixed */
+    scroll-margin-top: 100px;
 }
 .galeri-section h2 {
     color: #1766a3;

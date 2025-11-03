@@ -339,62 +339,9 @@ document.querySelectorAll('.dropdown1, .dropdown2').forEach(dropdown => {
     }
 
     // Form Validation and Submission for daftar.html
-    const ppdbForm = document.getElementById('ppdb-form');
+    const ppdbForm = document.getElementById('ppdbForm');
     if (ppdbForm) {
-        ppdbForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const fullName = document.getElementById('full-name').value.trim();
-            const birthDate = document.getElementById('birth-date').value.trim();
-            const address = document.getElementById('address').value.trim();
-            const parentName = document.getElementById('parent-name').value.trim();
-            const parentPhone = document.getElementById('parent-phone').value.trim();
-            const documents = document.getElementById('documents').files;
-            const feedback = document.getElementById('form-feedback');
-
-            const existingError = ppdbForm.querySelector('.error-message');
-            if (existingError) existingError.remove();
-
-            if (!fullName || !birthDate || !address || !parentName || !parentPhone || documents.length === 0) {
-                const errorMsg = document.createElement('p');
-                errorMsg.className = 'error-message';
-                errorMsg.style.color = 'red';
-                errorMsg.textContent = 'Semua kolom dan dokumen harus diisi!';
-                errorMsg.setAttribute('aria-live', 'polite');
-                ppdbForm.appendChild(errorMsg);
-                setTimeout(() => errorMsg.remove(), 3000);
-                return;
-            }
-            if (!/^\d{10,13}$/.test(parentPhone)) {
-                const errorMsg = document.createElement('p');
-                errorMsg.className = 'error-message';
-                errorMsg.style.color = 'red';
-                errorMsg.textContent = 'Nomor telepon harus berisi 10-13 angka!';
-                errorMsg.setAttribute('aria-live', 'polite');
-                ppdbForm.appendChild(errorMsg);
-                setTimeout(() => errorMsg.remove(), 3000);
-                return;
-            }
-
-            // Simulasi pengiriman ke WhatsApp (disesuaikan dengan data PPDB)
-            const whatsappNumber = '6287818040971';
-            const formattedMessage = `*Pendaftaran PPDB MTs Darul Falah*\n` +
-                                    `*Nama Lengkap:* ${fullName}\n` +
-                                    `*Tanggal Lahir:* ${birthDate}\n` +
-                                    `*Alamat:* ${address}\n` +
-                                    `*Nama Orang Tua:* ${parentName}\n` +
-                                    `*Nomor Telepon Orang Tua:* ${parentPhone}\n` +
-                                    `*Jumlah Dokumen:* ${documents.length} file diunggah`;
-            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(formattedMessage)}`;
-            window.open(whatsappUrl, '_blank');
-
-            feedback.style.color = 'green';
-            feedback.style.display = 'block';
-            feedback.textContent = 'Formulir pendaftaran berhasil dikirim!';
-            ppdbForm.reset();
-            setTimeout(() => {
-                feedback.style.display = 'none';
-            }, 5000);
-        });
+        // ...existing code...
     }
     // jerona galeri seperti daftar,dokumentasi,kegiatan //
     let thumbnails = document.querySelectorAll(".thumbnail-row img");
@@ -437,30 +384,53 @@ document.querySelectorAll('.dropdown1, .dropdown2').forEach(dropdown => {
         startSlideshow();
     };
 // Form validation for PPDB.html//
-document.getElementById("ppdbForm").addEventListener("submit", function(event) {
-  event.preventDefault();
 
-  let inputs = document.querySelectorAll("#ppdbForm [required]");
-  let valid = true;
+document.getElementById("ppdbForm").addEventListener("submit", async function(event) {
+    event.preventDefault();
 
-  inputs.forEach(input => {
-    if (input.value.trim() === "") {
-      valid = false;
-      input.style.borderColor = "red";
-    } else {
-      input.style.borderColor = "#ccc";
+    let inputs = document.querySelectorAll("#ppdbForm [required]");
+    let valid = true;
+
+    inputs.forEach(input => {
+        if (input.value.trim() === "") {
+            valid = false;
+            input.style.borderColor = "red";
+        } else {
+            input.style.borderColor = "#ccc";
+        }
+    });
+
+    if (!valid) {
+        alert("⚠️ Harap isi semua field wajib!");
+        return;
     }
-  });
 
-  if (!valid) {
-    alert("⚠️ Harap isi semua field wajib!");
-    return;
-  }
+    // Ambil data form
+    const formData = new FormData(this);
+    const data = {};
+    formData.forEach((value, key) => {
+        data[key] = value;
+    });
 
-  alert("✅ Pendaftaran berhasil! Data sudah tersimpan.");
-  this.reset();
-}); 
-}); 
+    // Kirim ke backend
+    try {
+        const res = await fetch('/api/ppdb', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        const result = await res.json();
+        if (result.success) {
+            alert('✅ Pendaftaran berhasil! Data sudah tersimpan.');
+            this.reset();
+        } else {
+            alert('❌ Gagal menyimpan data: ' + (result.message || 'Unknown error'));
+        }
+    } catch (err) {
+        alert('❌ Gagal mengirim data ke server.');
+    }
+});
+});
 
 // KLIK GAMBAR THUMBNAIL DI GALERI //
 

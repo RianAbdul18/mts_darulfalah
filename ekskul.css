@@ -1,8 +1,11 @@
 /* ekskul.css - CSS spesifik untuk ekskul.html */
 .ekskul-section {
     max-width: 900px;
-    margin: 40px auto;
+    margin: 0 auto; /* hapus margin atas besar */
+    margin-top: 20px; /* beri sedikit jarak antar section */
     padding: 20px;
+    /* Offset agar anchor scroll tidak tertutup header fixed (header tinggi ~100px) */
+    scroll-margin-top: 100px;
 }
 
 .ekskul-section h1 {

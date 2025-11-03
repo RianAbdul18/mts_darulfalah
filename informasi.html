@@ -7,6 +7,32 @@
   <link rel="stylesheet" href="s informasi.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Lokal styling untuk halaman Informasi */
+    .section-title{
+      background: linear-gradient(90deg,#0b6fb9,#0b90d1);
+      color:#fff;
+      padding:20px;
+      border-radius:8px;
+      text-align:center;
+      margin:0 0 12px 0; /* tempelkan ke header, hilangkan jarak atas */
+    }
+    .container{max-width:1200px;margin:0 auto;padding:20px} /* sedikit lebih lebar */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
+      align-items:start;
+    }
+    .card{background:#fff;border:1px solid #e6e6e6;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.06);display:flex;flex-direction:column}
+    .card img{width:100%;height:180px;object-fit:cover;display:block}
+    .card-content{padding:14px;flex:1;display:flex;flex-direction:column}
+    .tanggal{color:#888;font-size:0.85rem;margin-bottom:6px}
+    .judul{font-weight:700;margin:0 0 8px 0;color:#0b3a66}
+    .excerpt{flex:1;color:#444;font-size:0.95rem;margin-bottom:10px}
+    .read-more{display:inline-block;padding:8px 12px;background:#0b6fb9;color:#fff;border-radius:6px;text-decoration:none;font-size:0.9rem}
+    @media (max-width:420px){.card img{height:140px}}
+  </style>
 </head>
 <body>
   
@@ -64,36 +90,63 @@
     </div>
 
     <div class="grid">
-      <!-- Card 1 -->
+      <!-- Informasi 1 -->
       <div class="card">
-        <img src="img/gambar-1.jpg" alt="Berita 1">
+  <img src="img/Infornasi%201.jpg" alt="Informasi 1">
         <div class="card-content">
           <p class="tanggal">7 Jul 2025</p>
-          <p class="judul">MTsN 14 Tasikmalaya Menggelar Daftar Ulang Bagi Peserta Didik Baru</p>
+          <p class="judul">Daftar Ulang Peserta Didik Baru</p>
+          <p class="excerpt">Pelaksanaan daftar ulang untuk peserta didik baru dimulai pada tanggal yang telah ditentukan. Silakan membawa dokumen yang diperlukan.</p>
         </div>
       </div>
-      <!-- Card 2 -->
+
+      <!-- Informasi 2 -->
       <div class="card">
-        <img src="https://via.placeholder.com/400x250" alt="Berita 2">
+  <img src="img/Informasi%202.jpg" alt="Informasi 2">
         <div class="card-content">
           <p class="tanggal">2 Jul 2025</p>
-          <p class="judul">Antusias Pendidik dan Tenaga Kependidikan dalam Rapat Kerja (Raker) Perdana MTsN 14 Tasikmalaya</p>
+          <p class="judul">Rapat Kerja Pendidik dan Tenaga Kependidikan</p>
+          <p class="excerpt">Raker perdana tahun ajaran ini membahas perencanaan kurikulum dan peningkatan layanan pendidikan di sekolah.</p>
         </div>
       </div>
-      <!-- Card 3 -->
+
+      <!-- Informasi 3 -->
       <div class="card">
-        <img src="https://via.placeholder.com/400x250" alt="Berita 3">
+  <img src="img/Informasi%203.jpg" alt="Informasi 3">
         <div class="card-content">
           <p class="tanggal">2 Jun 2025</p>
-          <p class="judul">Upacara Hari Lahir Pancasila sebagai momentum memperkuat karakter siswa MTsN 14 Tasikmalaya</p>
+          <p class="judul">Upacara Hari Lahir Pancasila</p>
+          <p class="excerpt">Upacara peringatan hari lahir Pancasila dilaksanakan untuk menanamkan nilai-nilai kebangsaan pada siswa.</p>
         </div>
       </div>
-      <!-- Card 4 -->
+
+      <!-- Informasi 4 -->
       <div class="card">
-        <img src="https://via.placeholder.com/400x250" alt="Berita 4">
+  <img src="img/Informais%204.jpg" alt="Informasi 4">
         <div class="card-content">
           <p class="tanggal">20 May 2025</p>
-          <p class="judul">Harkitnas sebagai momentum menumbuhkan jiwa Nasionalisme, Patriotisme, dan karakter kebangsaan</p>
+          <p class="judul">Harkitnas dan Penguatan Karakter</p>
+          <p class="excerpt">Kegiatan Harkitnas menjadi momentum untuk menumbuhkan jiwa nasionalisme dan karakter kebangsaan.</p>
+        </div>
+      </div>
+
+      <!-- Informasi 5 -->
+      <div class="card">
+  <img src="img/Informasi%205.jpg" alt="Informasi 5">
+        <div class="card-content">
+          <p class="tanggal">15 Apr 2025</p>
+          <p class="judul">Pengumuman Kegiatan Ekstrakurikuler</p>
+          <p class="excerpt">Pendaftaran ekstrakurikuler dibuka kembali. Siswa dapat memilih kegiatan sesuai minat masing-masing.</p>
+        </div>
+      </div>
+
+      <!-- Informasi 6 -->
+      <div class="card">
+  <img src="img/informasi%206.jpg" alt="Informasi 6">
+        <div class="card-content">
+          <p class="tanggal">1 Mar 2025</p>
+          <p class="judul">Pengumuman Libur Sekolah</p>
+          <p class="excerpt">Sekolah akan melaksanakan jadwal libur sesuai kalender akademik. Periksa jadwal lengkap di laman resmi.</p>
         </div>
       </div>
     </div>
@@ -103,7 +156,7 @@
   <div class="footer-container">
 
    <div class="footer-left">
-  <img src="img/Logo 2.png" alt="Logo Sekolah" class="footer-logo">
+  <img src="img/Logo%202.png" alt="Logo Sekolah" class="footer-logo">
   <h4>MTs Darul Falah Cukangbungur</h4>
 
   <h5>Sosial Media</h5>

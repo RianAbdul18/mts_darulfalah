@@ -1,16 +1,15 @@
-
 /* profil.css - CSS spesifik untuk profil.html */
 .profile-content {
-    width: 100%;
-    padding: 20px 0;
-    background: var(--background-content);
-    margin-top: 100px;
+  width: 100%;
+  padding: 0;
+  background: var(--background-content);
+  margin-top: 0;
 }
 
 .profile-container {
     width: 95%;
     margin: 0 auto;
-    padding: 20px 15px;
+    padding: 0 15px;
 }
 
 .profile-section-1,
@@ -22,8 +21,10 @@
     display: none;
     background: #d8e8f8;
     padding: 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
+    border-radius: 0;
+    margin-bottom: 0;
+  /* Pastikan anchor scroll berada tepat di bawah header fixed */
+  scroll-margin-top: 100px;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
@@ -43,7 +44,7 @@
   background: #e8f0fe;
   padding: 30px;
   border-radius: 8px;
-  margin: 20px auto;
+  margin: 0 auto;
   max-width: 900px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
@@ -115,7 +116,7 @@
 /* sejarah singkat */
 .profile-section-2 {
   background: #fff; /* putih seperti gambar */
-  padding: 40px 20px;
+  padding: 20px 15px 20px 15px; /* padding atas lebih kecil */
   max-width: 900px;
   margin: 0 auto;
   line-height: 1.8;
@@ -125,6 +126,7 @@
 
 .profile-section-2 h3 {
   font-size: 24px;
+  margin-top: 0;
   margin-bottom: 10px;
   font-weight: bold;
   color: #111;
@@ -207,7 +209,7 @@
 
 
 .profile-section-4 {
-    background: #fff3e0;
+    background: #d8e8f8;
 }
 
 /* Staf Pendidikan */
@@ -272,8 +274,7 @@
 /* Fasilitas */
 
 .profile-content {
-    margin-top: 60px;
-     /* Mengurangi margin atas */
+  margin-top: 0; /* pastikan tidak ada jarak tambahan di atas */
 }
 .profile-section-6 {
     padding: 0; /* Menghapus padding luar */
