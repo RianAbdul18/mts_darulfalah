@@ -269,8 +269,23 @@
 .profile-section-5 .staff-card p {
   font-size: 14px;
   color: #090000;
+  text-align: center;
 }
-
+ .profile-section-5 .staff-card.tita p {
+    font-size: 14px;
+    color: #090000;
+    margin-left: -40px;
+ }
+  .profile-section-5 .staff-card.ismail p {
+      font-size: 14px;
+      color: #090000;
+      margin-left: -30px;
+  }
+   .profile-section-5 .staff-card.enung p {
+      font-size: 14px;
+      color: #090000;
+      margin-left: -30px;
+   }
 /* Fasilitas */
 
 .profile-content {
