@@ -84,7 +84,7 @@
 .slider-text h2 {
     margin-top: 0;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 6px;
     font-weight: 700;
 }
@@ -93,7 +93,7 @@
     font-family: 'Roboto', sans-serif;
     width: 100%;
     margin-top: 6px;
-    font-size: 1rem;
+    font-size: 1,2rem;
 }
 
 .slider-item.active .slider-text {
@@ -622,6 +622,115 @@
 .facility-text p {
     font-size: 14px;
     color: #444; /* pastikan deskripsi fasilitas berwarna gelap */
+}
+
+/* fasilitas */
+.fasilitas-section {
+   background: #d8e8f8;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+}
+
+.fasilitas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.fasilitas-header h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.fasilitas-header p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Tombol navigasi */
+.fasilitas-nav button {
+  background: none;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.fasilitas-nav button:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+/* AREA SLIDER */
+.fasilitas-slider {
+  overflow: hidden;
+  position: relative;
+}
+
+.fasilitas-container {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  gap: 20px;
+}
+
+/* Item Fasilitas */
+.fasilitas-item {
+  flex: 0 0 calc(50% - 10px); /* tampil 2 item per slide */
+  height: 300px;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  background: #fff;
+  
+}
+
+.fasilitas-img {
+  flex: 0 0 65%;
+  background: #f2f2f2;
+}
+
+.fasilitas-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.fasilitas-info {
+  flex: 1;
+  background: #0d5e9c;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-align: center;
+}
+/* Responsif */
+@media (max-width: 768px) {
+  .fasilitas-container {
+    flex-direction: column;
+  }
+
+  .fasilitas-item {
+    min-width: 100%;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .fasilitas-info {
+    font-size: 1.1rem;
+  }
 }
 
 /* Responsive */

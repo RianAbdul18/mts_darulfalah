@@ -320,7 +320,7 @@ document.querySelectorAll('.dropdown1, .dropdown2').forEach(dropdown => {
                 return;
             }
 
-            const whatsappNumber = '6287818040971';
+            const whatsappNumber = '625641111877';
             const formattedMessage = `*Pesan dari Formulir Kontak MTs Darul Falah*\n` +
                                     `*Nama:* ${name}\n` +
                                     `*Email:* ${email}\n` +
@@ -576,5 +576,74 @@ document.addEventListener('DOMContentLoaded', function() {
         startAutoPlay();
     });
 });
+
+// fasilitas 
+  const fasilitasContainer = document.querySelector('.fasilitas-container');
+  const fasilitasItems = document.querySelectorAll('.fasilitas-item');
+  const nextBtn = document.querySelector('.fasilitas-next');
+  const prevBtn = document.querySelector('.fasilitas-prev');
+
+  let currentIndex = 0;
+  const visibleItems = 2; // jumlah fasilitas yang tampil sekaligus
+  let autoPlayInterval;
+
+  function updateSlider() {
+    const itemWidth = fasilitasItems[0].offsetWidth + 20; // lebar item + jarak antar item
+    fasilitasContainer.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+  }
+
+  function nextSlide() {
+    if (currentIndex < fasilitasItems.length - visibleItems) {
+      currentIndex++;
+    } else {
+      currentIndex = 0; // kembali ke awal
+    }
+    updateSlider();
+  }
+
+  function prevSlide() {
+    if (currentIndex > 0) {
+      currentIndex--;
+    } else {
+      currentIndex = fasilitasItems.length - visibleItems; // ke akhir
+    }
+    updateSlider();
+  }
+
+  // Klik tombol navigasi manual
+  nextBtn.addEventListener('click', () => {
+    nextSlide();
+    resetAutoPlay(); // reset waktu autoplay biar gak bentrok
+  });
+
+  prevBtn.addEventListener('click', () => {
+    prevSlide();
+    resetAutoPlay();
+  });
+
+  // Autoplay otomatis setiap 4 detik
+  function startAutoPlay() {
+    autoPlayInterval = setInterval(nextSlide, 4000);
+  }
+
+  // Hentikan sementara saat user hover (biar user bisa baca teks)
+  function stopAutoPlay() {
+    clearInterval(autoPlayInterval);
+  }
+
+  // Reset autoplay setelah user interaksi
+  function resetAutoPlay() {
+    stopAutoPlay();
+    startAutoPlay();
+  }
+
+  fasilitasContainer.addEventListener('mouseenter', stopAutoPlay);
+  fasilitasContainer.addEventListener('mouseleave', startAutoPlay);
+
+  // Jalankan autoplay pertama kali
+  startAutoPlay();
+
+  // Responsif: reset posisi saat resize
+  window.addEventListener('resize', updateSlider);
 
 
