@@ -1,14 +1,11 @@
-/* index.css - CSS spesifik untuk index.html */
+
 .hero-slider {
-    /* Buat hero full-bleed: melebar ke seluruh viewport terlepas dari kontainer pusat
-       Teknik: set width ke 100vw lalu tarik margin sehingga dapat melewati batas wrapper */
     width: 100vw;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     overflow: hidden;
     position: relative;
-    /* tinggi hero disesuaikan agar area hero setara dengan viewport yang terlihat di bawah navbar */
-    height: calc(100vh - 100px); /* tinggi hero sama dengan viewport terlihat */
+    height: calc(100vh - 100px); 
 }
 
 .slider-container {
@@ -18,24 +15,16 @@
 }
 
 .slider-item {
-    /* setiap slide mengambil 100% dari lebar kontainer (yang dibuat full-bleed) */
     flex: 0 0 100%;
     width: 100%;
     position: relative;
-    /* pusatkan konten secara vertikal dan horizontal */
     display: flex;
     align-items: center;
     justify-content: center;
-    /* sesuaikan tinggi slide dengan viewport terlihat; slide akan menampilkan gambar sebanyak mungkin
-       tanpa memaksa gambar di-upscale */
     height: calc(100vh - 100px);
     max-height: calc(100vh - 100px);
-    /* gunakan background cover supaya sisi kiri/kanan terisi walau gambar aslinya tidak selebar layar */
-        background: none; /* Remove background to allow full-bleed image */
+    background: none; 
     }
-
-
-/* overlay ringan di atas background untuk memastikan teks terbaca */
 .slider-item::before {
     content: '';
     position: absolute;
@@ -45,10 +34,7 @@
     z-index: 1;
 }
 
-
 .slider-image {
-     /* Isi area slide sepenuhnya: melebar ke kiri & kanan (full-bleed) dan pertahankan rasio
-         menggunakan object-fit: cover sehingga tidak ada ruang kosong di sisi layar. */
      width: 100%;
      height: 100%;
      max-width: none;
@@ -59,7 +45,7 @@
      position: relative;
      z-index: 2;
     position: relative;
-    z-index: 2; /* tampil di atas overlay */
+    z-index: 2; 
 }
 
 .slider-text { z-index: 3; }
@@ -70,7 +56,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
-    font-size: 1.25rem; /* basis untuk desktop; disesuaikan di media queries */
+    font-size: 1.25rem; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
@@ -138,7 +124,7 @@
     display: flex;
     justify-content: space-between;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    margin-top: 24px; /* letakkan di bawah hero agar tidak menutupi gambar */
+    margin-top: 24px; 
 }
 
 .sambutan {
@@ -146,7 +132,7 @@
   justify-content: space-between;
   width: 100%;
   gap: 30px;
-  flex-wrap: wrap; /* biar responsif di HP */
+  flex-wrap: wrap; 
 }
 
 /* Bagian kiri */
@@ -238,12 +224,11 @@
 
 .detail-sambutan {
     max-width: 1000px;
-    margin: 20px auto; /* kurangi jarak atas agar tidak terlalu jauh dari header */
+    margin: 20px auto; 
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     overflow: hidden;
-    /* pastikan saat navigasi anchor, section ini tidak tertutup header fixed */
     scroll-margin-top: 100px;
 }
 
@@ -422,11 +407,6 @@
   right: 10px;
 }
 
-
-/* Mengandalkan variabel global dan reset dari `style.css`.
-   Jangan mendeklarasikan ulang :root/* atau reset global di file khusus halaman
-   agar tidak terjadi konflik antar stylesheet. */
-
 /* STAF PENGAJAR */
 
 .selengkapnya-button {
@@ -472,9 +452,9 @@
 
 .staff-image {
     width: 100%;
-    height: 300px; /* lebih tinggi supaya menampilkan bagian tubuh, bukan hanya kepala */
+    height: 300px; 
     object-fit: cover;
-    object-position: center center; /* pusatkan agar tampak dada & kepala */
+    object-position: center center; 
     border-radius: 8px;
     margin: 0 auto;
     display: block;
@@ -484,18 +464,18 @@
 .staff-name {
     font-size: 14px;
     font-weight: 700;
-    color: #111; /* pastikan teks nama gelap dan terbaca */
+    color: #111; 
     margin: 10px 0 5px;
 }
 
 .staff-role {
     font-size: 12px;
-    color: #666; /* warna sekunder lebih gelap untuk keterbacaan */
+    color: #666; 
 }
 
 /* Navigation buttons */
 .slideshow-nav {
-    display: none; /* sembunyikan tombol navigasi */
+    display: none; 
 }
 
 .slideshow-nav button {
@@ -621,9 +601,8 @@
 
 .facility-text p {
     font-size: 14px;
-    color: #444; /* pastikan deskripsi fasilitas berwarna gelap */
+    color: #444; 
 }
-
 /* fasilitas */
 .fasilitas-section {
    background: #d8e8f8;
@@ -683,7 +662,7 @@
 
 /* Item Fasilitas */
 .fasilitas-item {
-  flex: 0 0 calc(50% - 10px); /* tampil 2 item per slide */
+  flex: 0 0 calc(50% - 10px); 
   height: 300px;
   display: flex;
   border-radius: 10px;
@@ -736,7 +715,7 @@
 /* Responsive */
 @media screen and (max-width: 768px) {
     .berita-item, .facility-item {
-        min-width: 250px;   /* sedikit lebih kecil untuk layar HP */
+        min-width: 250px;   
     }
 }
 
@@ -764,7 +743,6 @@
 
 /* Responsive adjustments khusus index.html */
 @media (max-width: 992px) {
-    /* Untuk konsistensi, tetap gunakan tinggi full layar terlihat di tablet/desktop */
     .slider-image { height: calc(100vh - 100px); }
     .slider-text { font-size: 1.05rem; padding: 16px; }
     .slider-text h2 { font-size: 1.6rem; }

@@ -1,10 +1,9 @@
-/* ekskul.css - CSS spesifik untuk ekskul.html */
+
 .ekskul-section {
     max-width: 900px;
-    margin: 0 auto; /* hapus margin atas besar */
-    margin-top: 20px; /* beri sedikit jarak antar section */
+    margin: 0 auto; 
+    margin-top: 20px; 
     padding: 20px;
-    /* Offset agar anchor scroll tidak tertutup header fixed (header tinggi ~100px) */
     scroll-margin-top: 100px;
 }
 
@@ -48,7 +47,7 @@
 @media screen and (max-width: 768px) {
      .ekskul-img {
         height: 200px;
-        object-fit: cover; /* biar gambar rapi */
+        object-fit: cover; 
     }
     .ekskul-text {
         padding: 15px 0;

@@ -23,8 +23,7 @@
     padding: 20px;
     border-radius: 0;
     margin-bottom: 0;
-  /* Pastikan anchor scroll berada tepat di bawah header fixed */
-  scroll-margin-top: 100px;
+    scroll-margin-top: 100px;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
@@ -54,7 +53,7 @@
   text-align: left;
   font-size: 28px;
   margin-bottom: 10px;
-  color: #0a0a0a; /* biru tua */
+  color: #0a0a0a; 
 }
 
 .profile-section-1 h2 {
@@ -93,7 +92,6 @@
   color: #333;
 }
 
-/* Nomor kolom (1. 2. 3. dst) lebih tebal */
 .profil-table td:first-child {
   font-weight: 600;
   width: 250px;
@@ -115,8 +113,8 @@
 
 /* sejarah singkat */
 .profile-section-2 {
-  background: #fff; /* putih seperti gambar */
-  padding: 20px 15px 20px 15px; /* padding atas lebih kecil */
+  background: #fff; 
+  padding: 20px 15px 20px 15px;
   max-width: 900px;
   margin: 0 auto;
   line-height: 1.8;
@@ -154,7 +152,7 @@
 
 /* Visi Misi */
 .profile-section-3 {
-  background: #fff; /* putih sesuai gambar */
+  background: #fff; 
   padding: 40px 20px;
   max-width: 900px;
   margin: 0 auto;
@@ -254,7 +252,7 @@
   margin: 0 auto 10px auto;
   width: 180px;
   height: 220px;
-  object-fit: cover;  /* crop rapi, tanpa distorsi */
+  object-fit: cover;  
   border-radius: 10px;
 }
 
@@ -289,12 +287,12 @@
 /* Fasilitas */
 
 .profile-content {
-  margin-top: 0; /* pastikan tidak ada jarak tambahan di atas */
+  margin-top: 0; 
 }
 .profile-section-6 {
-    padding: 0; /* Menghapus padding luar */
-    background: transparent; /* Menghapus latar belakang */
-    box-shadow: none; /* Menghapus shadow */
+    padding: 0; 
+    background: transparent; 
+    box-shadow: none; 
 }
 .section-title {
     display: block;

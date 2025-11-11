@@ -584,11 +584,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const prevBtn = document.querySelector('.fasilitas-prev');
 
   let currentIndex = 0;
-  const visibleItems = 2; // jumlah fasilitas yang tampil sekaligus
+  const visibleItems = 2; 
   let autoPlayInterval;
 
   function updateSlider() {
-    const itemWidth = fasilitasItems[0].offsetWidth + 20; // lebar item + jarak antar item
+    const itemWidth = fasilitasItems[0].offsetWidth + 20; 
     fasilitasContainer.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
   }
 
@@ -596,7 +596,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (currentIndex < fasilitasItems.length - visibleItems) {
       currentIndex++;
     } else {
-      currentIndex = 0; // kembali ke awal
+      currentIndex = 0; 
     }
     updateSlider();
   }
@@ -605,7 +605,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (currentIndex > 0) {
       currentIndex--;
     } else {
-      currentIndex = fasilitasItems.length - visibleItems; // ke akhir
+      currentIndex = fasilitasItems.length - visibleItems; 
     }
     updateSlider();
   }
@@ -613,7 +613,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Klik tombol navigasi manual
   nextBtn.addEventListener('click', () => {
     nextSlide();
-    resetAutoPlay(); // reset waktu autoplay biar gak bentrok
+    resetAutoPlay(); 
   });
 
   prevBtn.addEventListener('click', () => {

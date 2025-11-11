@@ -13,7 +13,7 @@
     --accent-color: #1027d4;
     --footer-background: #f8f9fa;
     --menu-hover-bg: #f0f5ff;
-    --nav-offset: 100px; /* tinggi header/nav yang dipakai untuk offset konten */
+    --nav-offset: 100px; 
 }
 
 /* Reset and Base Styles */
@@ -25,16 +25,16 @@
 }
 
 body {
-    /* Gunakan font yang di-import di atas untuk konsistensi modern */
+   
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     background: var(--background-content);
-    padding-top: var(--nav-offset); /* Untuk mengkompensasi navbar fixed */
+    padding-top: var(--nav-offset); 
     color: var(--text-color);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Skip link untuk aksesibilitas: tersembunyi kecuali saat fokus */
+
 .skip-link {
     position: absolute;
     left: -999px;
@@ -277,7 +277,7 @@ nav ul li a:hover {
 }
 
 .social-icons a:hover {
-  color: #ffd700; /* kuning saat hover */
+  color: #ffd700; 
   transform: scale(1.2);
 }
 
@@ -349,7 +349,6 @@ nav ul li a:hover {
 .social-icons a:nth-child(4) { color: #FF0000; } /* YouTube */
 .social-icons a:nth-child(5) { color: #010101; } /* TikTok */
 
-/* footer Hover dengan efek glow */
 .social-icons a:hover {
   transform: scale(1.2);
   filter: drop-shadow(0 0 6px currentColor);
